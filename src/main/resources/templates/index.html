@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+</head>
+<body>
+    <form method="POST" action="/weather/search" >
+        <input type="text" name="city" placeholder="city">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <br>
+    <hr>
+
+    <div data-th-if="${city != null}">
+        <h1>Weather for <span data-th-text="${city}"></span></h1>
+        <br>
+        <h3><span data-th-text="${main}"></span> - <span data-th-text="${description}"></h3>    
+    </div>
+   
+</body>
+</html>
